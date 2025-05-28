@@ -29,9 +29,7 @@ public class ProductoDAO implements IProductoDAO {
     private MongoCollection<Producto> coleccion;
 
     /**
-     * constructor que inicializa la coleccion de productos desde la base de
-     * datos
-     *
+     * constructor que inicializa la coleccion de productos desde la conexion
      *
      */
     public ProductoDAO() {
@@ -115,7 +113,7 @@ public class ProductoDAO implements IProductoDAO {
      * Busca un producto por su id
      *
      * @param id
-     * @return
+     * @return devuelve el producto encontrado por su id
      * @throws PersistenciaException
      */
     @Override
@@ -132,7 +130,7 @@ public class ProductoDAO implements IProductoDAO {
      * busca productos el cual coincida con el nombre
      *
      * @param nombreParcial
-     * @return
+     * @return devuelve el producto encontrado por su nombre
      * @throws PersistenciaException
      */
     @Override
