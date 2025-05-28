@@ -5,6 +5,7 @@
 package DAOs;
 
 import Conexion.Conexion;
+import DTOSalida.ReporteCajaDTO;
 import Excepcion.PersistenciaException;
 import Interfaces.ICajaDAO;
 import POJOs.Caja;
@@ -182,6 +183,40 @@ public class CajaDAO implements ICajaDAO {
             }
         } catch (PersistenciaException e) {
             throw new PersistenciaException("Error en cambio de usuario en caja del servidor", e);
+        }
+    }
+
+    /**
+     * Genera un reporte de cajas abiertas o cerradas entre fechas.
+     *
+     * @param inicio Fecha de inicio del rango.
+     * @param fin Fecha de fin del rango.
+     * @return Lista de cajas encontradas como DTOs.
+     * @throws PersistenciaException Si ocurre un error durante la consulta.
+     */
+    public List<ReporteCajaDTO> generarReporteCajasPorFechas(Date inicio, Date fin) throws PersistenciaException {
+        try {
+            Bson filtro = Filters.and(
+                    Filters.gte("fechaApertura", inicio),
+                    Filters.lte("fechaApertura", fin)
+            );
+
+            List<ReporteCajaDTO> reporte = new ArrayList<>();
+            for (Caja caja : coleccion.find(filtro)) {
+                ReporteCajaDTO dto = new ReporteCajaDTO();
+                dto.setId(caja.getId().toHexString());
+                dto.setUsuario(caja.getUsuario());
+                dto.setFechaApertura(caja.getFechaApertura());
+                dto.setFechaCierre(caja.getFechaCierre());
+                dto.setMontoInicial(caja.getMontoInicial());
+                dto.setMontoFinal(caja.getMontoFinal());
+                dto.setTotalVentas(caja.getTotalVentas());
+                reporte.add(dto);
+            }
+
+            return reporte;
+        } catch (Exception e) {
+            throw new PersistenciaException("Error al generar reporte de cajas", e);
         }
     }
 

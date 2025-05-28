@@ -5,6 +5,7 @@
 package DAOs;
 
 import Conexion.Conexion;
+import DTOSalida.ReporteInventarioBajaDTO;
 import Excepcion.PersistenciaException;
 import Interfaces.IProductoDAO;
 import POJOs.Categoria;
@@ -198,6 +199,35 @@ public class ProductoDAO implements IProductoDAO {
             return coleccion.find(filtro).into(new ArrayList<>());
         } catch (Exception e) {
             throw new PersistenciaException("Error al buscar productos con bajo stock", e);
+        }
+    }
+
+    /**
+     * Genera un reporte de productos con existencias por debajo del umbral.
+     *
+     * @param umbral Valor mínimo de existencias aceptables.
+     * @return Lista de productos con bajo inventario.
+     * @throws PersistenciaException Si ocurre un error durante la consulta.
+     */
+    public List<ReporteInventarioBajaDTO> generarReporteInventarioBajo(int umbral) throws PersistenciaException {
+        try {
+            Bson filtro = Filters.lt("existencias", umbral);
+
+            List<ReporteInventarioBajaDTO> reporte = new ArrayList<>();
+            for (Producto producto : coleccion.find(filtro)) {
+                ReporteInventarioBajaDTO dto = new ReporteInventarioBajaDTO();
+                dto.setProductoId(producto.getId().toHexString());
+                dto.setNombre(producto.getNombre());
+                dto.setCategoria(producto.getCategoria().toString());
+                dto.setExistencias(producto.getExistencias());
+                dto.setUmbral(umbral); // Para referencia en el reporte
+
+                reporte.add(dto);
+            }
+
+            return reporte;
+        } catch (Exception e) {
+            throw new PersistenciaException("Error al generar reporte de inventario bajo", e);
         }
     }
 

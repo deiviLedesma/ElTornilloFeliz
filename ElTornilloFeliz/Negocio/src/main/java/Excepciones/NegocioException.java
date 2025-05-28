@@ -2,19 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Excepcion;
+package Excepciones;
 
 /**
- * clase que se usara para las excepciones de persistencia
+ * clase de excepciones para la capa de negocio
  *
  * @author SDavidLedesma
  */
-public class PersistenciaException extends Exception {
+public class NegocioException extends Exception {
 
     /**
      * constructor por omision
      */
-    public PersistenciaException() {
+    public NegocioException() {
     }
 
     /**
@@ -22,18 +22,18 @@ public class PersistenciaException extends Exception {
      *
      * @param message
      */
-    public PersistenciaException(String message) {
+    public NegocioException(String message) {
         super(message);
     }
 
     /**
-     * constructor que muestra el mensaje personalizado y la causa de la
-     * excepcion
+     * constructor que muestra el mensaje personalizado de la excepcion y la
+     * causa de la excepcion
      *
      * @param message
      * @param cause
      */
-    public PersistenciaException(String message, Throwable cause) {
+    public NegocioException(String message, Throwable cause) {
         super(message, cause);
     }
 
