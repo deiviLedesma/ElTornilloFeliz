@@ -1,1 +1,8 @@
-ferreteria\negocio\Negocio.class
+Mappers\ProductoMapper.class
+BOs\DevolucionBO.class
+BOs\UsuarioBO.class
+BOs\ProductoBO.class
+BOs\CajaBO.class
+Excepciones\NegocioException.class
+BOs\VentaBO.class
+BOs\CompraBO.class

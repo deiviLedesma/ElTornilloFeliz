@@ -25,13 +25,19 @@ public class Categoria {
     }
 
     /**
-     *  constructor que inicializa los atributos
+     * constructor que inicializa los atributos
+     *
      * @param id
      * @param nombre
-     * @param descripcion 
+     * @param descripcion
      */
     public Categoria(ObjectId id, String nombre, String descripcion) {
         this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
+    public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }

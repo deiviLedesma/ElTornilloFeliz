@@ -4,7 +4,11 @@
  */
 package Mappers;
 
+import DTOEntrada.CrearProducto;
+import DTOSalida.ProductoDTO;
+import POJOs.Categoria;
 import POJOs.Producto;
+import POJOs.UnidadMedida;
 
 /**
  *
@@ -12,12 +16,12 @@ import POJOs.Producto;
  */
 public class ProductoMapper {
 
-    public static Producto toEntity(ProductoEntradaDTO dto) {
+    public static Producto toEntity(CrearProducto dto, Categoria categoria, UnidadMedida unidadMedida) {
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
         producto.setDescripcion(dto.getDescripcion());
-        producto.setCategoriaId(new ObjectId(dto.getCategoriaId()));
-        producto.setUnidadMedidaId(new ObjectId(dto.getUnidadMedidaId()));
+        producto.setCategoria(categoria);
+        producto.setUnidadMedida(unidadMedida);
         producto.setPrecioCompra(dto.getPrecioCompra());
         producto.setPrecioVenta(dto.getPrecioVenta());
         producto.setExistencias(dto.getExistencias());
@@ -25,17 +29,17 @@ public class ProductoMapper {
         return producto;
     }
 
-    public static Producto toDTO(Producto producto, String categoriaNombre, String unidadMedidaNombre) {
-        ProductoSalidaDTO dto = new ProductoSalidaDTO();
+    public static ProductoDTO toDTO(Producto producto, String categoriaNombre, String unidadMedidaNombre) {
+        ProductoDTO dto = new ProductoDTO();
         dto.setId(producto.getId().toHexString());
         dto.setNombre(producto.getNombre());
-        dto.setDescripcion(producto.getDescripcion());
-        dto.setCategoriaNombre(categoriaNombre);
-        dto.setUnidadMedidaNombre(unidadMedidaNombre);
+        dto.setDesccripcion(producto.getDescripcion());
+        dto.setCategoria(categoriaNombre);
+        dto.setUnidadMedida(unidadMedidaNombre);
         dto.setPrecioCompra(producto.getPrecioCompra());
         dto.setPrecioVenta(producto.getPrecioVenta());
         dto.setExistencias(producto.getExistencias());
-        dto.setImagen(producto.getImagen());
+        dto.setIamgen(producto.getImagen());
         return dto;
     }
 }

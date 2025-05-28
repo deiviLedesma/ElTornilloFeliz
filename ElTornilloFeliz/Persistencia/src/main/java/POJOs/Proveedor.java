@@ -40,6 +40,12 @@ public class Proveedor {
         this.correo = correo;
     }
 
+    public Proveedor(String nombre, String telefono, String correo) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
     //getters y setters
     public ObjectId getId() {
         return id;

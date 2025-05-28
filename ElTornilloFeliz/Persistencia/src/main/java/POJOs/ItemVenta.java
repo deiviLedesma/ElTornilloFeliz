@@ -41,6 +41,12 @@ public class ItemVenta {
         this.subtotal = subtotal;
     }
 
+    public ItemVenta(ObjectId productoId, int cantidad, double precioUnitario) {
+        this.productoId = productoId;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+    }
+
     //getters y setters
     public ObjectId getProductoId() {
         return productoId;

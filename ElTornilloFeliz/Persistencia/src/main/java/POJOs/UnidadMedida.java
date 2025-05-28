@@ -36,6 +36,11 @@ public class UnidadMedida {
         this.descripcion = descripcion;
     }
 
+    public UnidadMedida(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
     //getters y setters
     public ObjectId getId() {
         return id;

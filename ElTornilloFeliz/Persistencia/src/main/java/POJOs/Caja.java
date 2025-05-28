@@ -53,6 +53,11 @@ public class Caja {
         this.observaciones = observaciones;
     }
 
+    public Caja(double montoInicial, String usuario) {
+        this.montoInicial = montoInicial;
+        this.usuario = usuario;
+    }
+
     //getters y setters
     public ObjectId getId() {
         return id;

@@ -9,7 +9,7 @@ package DTOSalida;
  *
  * @author SDavidLedesma
  */
-public class Categoria {
+public class CategoriaDTO {
 
     //Atributo
     private String id;
@@ -19,7 +19,7 @@ public class Categoria {
     /**
      * constructor por omision
      */
-    public Categoria() {
+    public CategoriaDTO() {
     }
 
     /**
@@ -29,7 +29,7 @@ public class Categoria {
      * @param nombre
      * @param descripcion
      */
-    public Categoria(String id, String nombre, String descripcion) {
+    public CategoriaDTO(String id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -62,7 +62,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Categoria{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
+        return "CategoriaDTO{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
 
 }
