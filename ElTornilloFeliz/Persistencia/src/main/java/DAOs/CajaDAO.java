@@ -35,6 +35,11 @@ public class CajaDAO implements ICajaDAO {
         this.coleccion = Conexion.getDatabase().getCollection("Caja", Caja.class);
     }
 
+    // Constructor alternativo para pruebas
+    public CajaDAO(MongoCollection<Caja> coleccionMock) {
+        this.coleccion = coleccionMock;
+    }
+
     @Override
     public Caja abrirCaja(Caja caja) throws PersistenciaException {
         //validar que no exista ya una caja abierta para el usaurio

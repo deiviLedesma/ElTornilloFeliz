@@ -14,7 +14,7 @@ public class ReporteInventarioBajaDTO {
     //atributos
     private String productoId;
     private String nombre;
-    private String categoria;
+    private CategoriaDTO categoria;
     private int existencias;
     private int umbral;
 
@@ -33,7 +33,7 @@ public class ReporteInventarioBajaDTO {
      * @param existencias
      * @param umbral
      */
-    public ReporteInventarioBajaDTO(String productoId, String nombre, String categoria, int existencias, int umbral) {
+    public ReporteInventarioBajaDTO(String productoId, String nombre, CategoriaDTO categoria, int existencias, int umbral) {
         this.productoId = productoId;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -58,11 +58,11 @@ public class ReporteInventarioBajaDTO {
         this.nombre = nombre;
     }
 
-    public String getCategoria() {
+    public CategoriaDTO getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(CategoriaDTO categoria) {
         this.categoria = categoria;
     }
 

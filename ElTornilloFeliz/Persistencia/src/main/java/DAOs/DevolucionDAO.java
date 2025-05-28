@@ -8,6 +8,7 @@ import Conexion.Conexion;
 import DTOSalida.ReporteDevolucionDTO;
 import Excepcion.PersistenciaException;
 import Interfaces.IDevolucionDAO;
+import POJOs.Caja;
 import POJOs.Devolucion;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -35,6 +36,11 @@ public class DevolucionDAO implements IDevolucionDAO {
      */
     public DevolucionDAO(MongoDatabase database) {
         this.coleccion = Conexion.getDatabase().getCollection("devoluciones", Devolucion.class);
+    }
+
+    // Constructor alternativo para pruebas
+    public DevolucionDAO(MongoCollection<Devolucion> coleccionMock) {
+        this.coleccion = coleccionMock;
     }
 
     /**

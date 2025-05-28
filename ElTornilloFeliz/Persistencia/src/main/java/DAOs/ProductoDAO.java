@@ -37,6 +37,11 @@ public class ProductoDAO implements IProductoDAO {
         this.coleccion = Conexion.getDatabase().getCollection("Producto", Producto.class);
     }
 
+    // Constructor alternativo para pruebas
+    public ProductoDAO(MongoCollection<Producto> coleccionMock) {
+        this.coleccion = coleccionMock;
+    }
+
     @Override
     public Producto insertar(Producto producto) throws PersistenciaException {
         try {
@@ -218,10 +223,19 @@ public class ProductoDAO implements IProductoDAO {
                 ReporteInventarioBajaDTO dto = new ReporteInventarioBajaDTO();
                 dto.setProductoId(producto.getId().toHexString());
                 dto.setNombre(producto.getNombre());
-                dto.setCategoria(producto.getCategoria().toString());
-                dto.setExistencias(producto.getExistencias());
-                dto.setUmbral(umbral); // Para referencia en el reporte
 
+                // Conversión manual de Categoria
+                DTOSalida.CategoriaDTO categoriaDTO = new DTOSalida.CategoriaDTO();
+                POJOs.Categoria categoriaEntidad = producto.getCategoria();
+                if (categoriaEntidad != null) {
+                    categoriaDTO.setId(categoriaEntidad.getId() != null ? categoriaEntidad.getId().toHexString() : null);
+                    categoriaDTO.setNombre(categoriaEntidad.getNombre());
+                    categoriaDTO.setDescripcion(categoriaEntidad.getDescripcion());
+                }
+                dto.setCategoria(categoriaDTO);
+
+                dto.setExistencias(producto.getExistencias());
+                dto.setUmbral(umbral);
                 reporte.add(dto);
             }
 
