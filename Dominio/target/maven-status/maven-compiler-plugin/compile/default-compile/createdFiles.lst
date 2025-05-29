@@ -1,0 +1,13 @@
+ferreteria\dominio\Dominio.class
+POJOs\Venta.class
+POJOs\ItemCompra.class
+POJOs\Categoria.class
+POJOs\Compra.class
+POJOs\ItemDevolucion.class
+POJOs\UnidadMedida.class
+POJOs\Usuario.class
+POJOs\Devolucion.class
+POJOs\Caja.class
+POJOs\ItemVenta.class
+POJOs\Proveedor.class
+POJOs\Producto.class

@@ -1,0 +1,54 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/SDavidLedesma/.m2/repository/org/mongodb/mongodb-driver-sync/4.2.2/mongodb-driver-sync-4.2.2.jar;C:/Users/SDavidLedesma/.m2/repository/org/mongodb/bson/4.2.2/bson-4.2.2.jar;C:/Users/SDavidLedesma/.m2/repository/org/mongodb/mongodb-driver-core/4.2.2/mongodb-driver-core-4.2.2.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+19
+-sourcepath
+'C:/Users/SDavidLedesma/Desktop/proyecto final bda/Proyecto-BDA-Mongo/Ferreteria/Dominio/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/SDavidLedesma/Desktop/proyecto final bda/Proyecto-BDA-Mongo/Ferreteria/Dominio/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Dominio 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Dominio 1.0-SNAPSHOT API'
+ferreteria.dominio
+POJOs
+C:\Users\SDavidLedesma\.m2\repository\org\mongodb\mongodb-driver-sync\4.2.2\mongodb-driver-sync-4.2.2.jar = 1747764844202
+C:\Users\SDavidLedesma\.m2\repository\org\mongodb\bson\4.2.2\bson-4.2.2.jar = 1747764844619
+C:\Users\SDavidLedesma\.m2\repository\org\mongodb\mongodb-driver-core\4.2.2\mongodb-driver-core-4.2.2.jar = 1747764844490
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\src\main\java = 1747867293551
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\allclasses-index.html = 1748042154268
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\allpackages-index.html = 1748042154275
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\copy.svg = 1748042154389
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\element-list = 1748042154007
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\help-doc.html = 1748042154373
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\index-all.html = 1748042154353
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\index.html = 1748042154215
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\jquery-ui.overrides.css = 1748042154438
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\member-search-index.js = 1748042154292
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\module-search-index.js = 1748042154280
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\overview-summary.html = 1748042154364
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\overview-tree.html = 1748042154203
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\package-search-index.js = 1748042154284
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\script.js = 1748042154384
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\search-page.js = 1748042154401
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\search.html = 1748042154358
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\search.js = 1748042154395
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\stylesheet.css = 1748042154379
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\tag-search-index.js = 1748042154296
+C:\Users\SDavidLedesma\Desktop\proyecto final bda\Proyecto-BDA-Mongo\Ferreteria\Dominio\target\reports\apidocs\type-search-index.js = 1748042154288
