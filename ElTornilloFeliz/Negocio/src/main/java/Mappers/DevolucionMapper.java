@@ -5,11 +5,14 @@
 package Mappers;
 
 import DTOEntrada.CrearDevolucion;
+import DTOEntrada.CrearItemDevolucion;
+import DTOSalida.DevolucionDTO;
+import DTOSalida.ItemDevolucionDTO;
 import POJOs.Devolucion;
 import POJOs.ItemDevolucion;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -18,9 +21,27 @@ import java.util.stream.Collectors;
 public class DevolucionMapper {
 
     public static Devolucion toEntity(CrearDevolucion dto) {
-        List<ItemDevolucion> productos = dto.getProductosDevueltos().stream()
-                .map(ItemDevolucionMapper::toEntity)
-                .collect(Collectors.toList());
-        return new Devolucion(null, new Date(), dto.getMotivo(), dto.getUsuario(), productos);
+        Devolucion d = new Devolucion();
+        d.setMotivo(dto.getMotivo());
+        d.setUsuario(dto.getUsuario());
+        List<ItemDevolucion> items = new ArrayList<>();
+        for (CrearItemDevolucion itemDto : dto.getProductosDevueltos()) {
+            ItemDevolucion item = new ItemDevolucion();
+            item.setProductoId(new ObjectId(itemDto.getProductoId()));
+            item.setCantidad(itemDto.getCantidad());
+            items.add(item);
+        }
+        d.setProductosDevueltos(items);
+        return d;
+    }
+
+    public static DevolucionDTO toDTO(Devolucion d, List<ItemDevolucionDTO> productos) {
+        DevolucionDTO dto = new DevolucionDTO();
+        dto.setId(d.getId().toHexString());
+        dto.setFecha(d.getFecha());
+        dto.setMotivo(d.getMotivo());
+        dto.setUsuario(d.getUsuario());
+        dto.setProductosDevueltos(productos);
+        return dto;
     }
 }

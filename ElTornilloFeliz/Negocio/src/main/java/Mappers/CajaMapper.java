@@ -5,8 +5,8 @@
 package Mappers;
 
 import DTOEntrada.CrearCaja;
+import DTOSalida.CajaDTO;
 import POJOs.Caja;
-import java.util.Date;
 
 /**
  *
@@ -15,6 +15,21 @@ import java.util.Date;
 public class CajaMapper {
 
     public static Caja toEntity(CrearCaja dto) {
-        return new Caja(dto.getMontoInicial(), dto.getUsuario());
+        Caja c = new Caja();
+        c.setMontoInicial(dto.getMontoInicial());
+        c.setUsuario(dto.getUsuario());
+        return c;
     }
+    
+     public static CajaDTO toDTO(Caja c) {
+        CajaDTO dto = new CajaDTO();
+        dto.setId(c.getId().toHexString());
+        dto.setFechaApertura(c.getFechaApertura());
+        dto.setMontoInicial(c.getMontoInicial());
+        dto.setUsuario(c.getUsuario());
+        return dto;
+    }
+    
 }
+
+

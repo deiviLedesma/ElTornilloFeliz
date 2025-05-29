@@ -18,7 +18,7 @@ public class CompraDTO {
     //Atributos
     private String id;
     private String proveedorNombre;
-    private List<CrearItemCompra> productos;
+    private List<ItemCompraDTO> productos;
     private double total;
     private Date fechaHora;
     private String usuario;
@@ -39,7 +39,7 @@ public class CompraDTO {
      * @param fechaHora
      * @param usuario
      */
-    public CompraDTO(String id, String proveedorNombre, List<CrearItemCompra> productos, double total, Date fechaHora, String usuario) {
+    public CompraDTO(String id, String proveedorNombre, List<ItemCompraDTO> productos, double total, Date fechaHora, String usuario) {
         this.id = id;
         this.proveedorNombre = proveedorNombre;
         this.productos = productos;
@@ -64,11 +64,11 @@ public class CompraDTO {
         this.proveedorNombre = proveedorNombre;
     }
 
-    public List<CrearItemCompra> getProductos() {
+    public List<ItemCompraDTO> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<CrearItemCompra> productos) {
+    public void setProductos(List<ItemCompraDTO> productos) {
         this.productos = productos;
     }
 

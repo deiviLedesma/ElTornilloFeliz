@@ -20,7 +20,7 @@ public class DevolucionDTO {
     private String usuario;
     private String motivo;
     private Date fecha;
-    private List<CrearItemDevolucion> productosDevueltos;
+    private List<ItemDevolucionDTO> productosDevueltos;
 
     /**
      * constructor por omision
@@ -37,7 +37,7 @@ public class DevolucionDTO {
      * @param fecha
      * @param productosDevueltos
      */
-    public DevolucionDTO(String id, String usuario, String motivo, Date fecha, List<CrearItemDevolucion> productosDevueltos) {
+    public DevolucionDTO(String id, String usuario, String motivo, Date fecha, List<ItemDevolucionDTO> productosDevueltos) {
         this.id = id;
         this.usuario = usuario;
         this.motivo = motivo;
@@ -78,11 +78,11 @@ public class DevolucionDTO {
         this.fecha = fecha;
     }
 
-    public List<CrearItemDevolucion> getProductosDevueltos() {
+    public List<ItemDevolucionDTO> getProductosDevueltos() {
         return productosDevueltos;
     }
 
-    public void setProductosDevueltos(List<CrearItemDevolucion> productosDevueltos) {
+    public void setProductosDevueltos(List<ItemDevolucionDTO> productosDevueltos) {
         this.productosDevueltos = productosDevueltos;
     }
 
