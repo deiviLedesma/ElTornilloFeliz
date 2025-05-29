@@ -32,9 +32,8 @@ public class DevolucionDAO implements IDevolucionDAO {
      * constructor que inicializa la coleccion de devoluciones desde la base de
      * datos
      *
-     * @param database
      */
-    public DevolucionDAO(MongoDatabase database) {
+    public DevolucionDAO() {
         this.coleccion = Conexion.getDatabase().getCollection("devoluciones", Devolucion.class);
     }
 

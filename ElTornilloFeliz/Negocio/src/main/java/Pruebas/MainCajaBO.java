@@ -9,12 +9,7 @@ import DAOs.CajaDAO;
 import DTOEntrada.CrearCaja;
 import DTOSalida.CajaDTO;
 import Excepciones.NegocioException;
-import Interfaces.ICajaDAO;
-import POJOs.Caja;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import java.util.Date;
 
 /**
  *
@@ -23,27 +18,28 @@ import com.mongodb.client.MongoDatabase;
 public class MainCajaBO {
 
     public static void main(String[] args) {
-        // Configura la conexión a MongoDB
-        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-        MongoDatabase database = mongoClient.getDatabase("eltornillofeliz");
+        // Crear una instancia del DAO
+        CajaDAO cajaDAO = new CajaDAO();
 
-        // Inicializa el DAO y el BO
-        ICajaDAO cajaDAO = new CajaDAO((MongoCollection<Caja>) database);
+        // Crear una instancia del BO con el DAO
         CajaBO cajaBO = new CajaBO(cajaDAO);
 
-        // Crea un DTO para abrir la caja
+        // Crear un DTO con los datos de la caja a abrir
         CrearCaja crearCaja = new CrearCaja();
         crearCaja.setMontoInicial(1000.0);
         crearCaja.setUsuario("admin");
 
         try {
-            // Llama al método abrirCaja
-            CajaDTO cajaDTO = cajaBO.abrirCaja(crearCaja);
-            System.out.println("Caja abierta: " + cajaDTO);
+            // Llamar al método para abrir la caja
+            CajaDTO cajaAbierta = cajaBO.abrirCaja(crearCaja);
+
+            // Imprimir los detalles de la caja abierta
+            System.out.println("Caja abierta exitosamente:");
+            System.out.println("ID: " + cajaAbierta.getId());
+            System.out.println("Monto Inicial: " + cajaAbierta.getMontoInicial());
+            System.out.println("Usuario: " + cajaAbierta.getUsuario());
         } catch (NegocioException e) {
-            e.printStackTrace();
-        } finally {
-            mongoClient.close();
+            System.err.println("Error al abrir la caja: " + e.getMessage());
         }
     }
 }
